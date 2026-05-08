@@ -213,3 +213,58 @@ body {
   100% { transform: translateX(-50%); }
 }
 .animate-marquee { animation: marquee 25s linear infinite; }
+
+/* Section heading */
+.section-heading {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.25;
+}
+@media (max-width: 767px) {
+  .section-heading { font-size: 1.4rem; }
+}
+
+/* Pricing table */
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.pricing-table th {
+  background: rgba(10,52,108,0.06);
+  color: #374151;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #e5e7eb;
+  white-space: nowrap;
+}
+.pricing-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: top;
+}
+.pricing-table tr:last-child td { border-bottom: none; }
+.pricing-table tr:nth-child(even) td { background: #f9fafb; }
+
+/* Mobile horizontal scroll for tables */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* Mobile spacing utilities */
+@media (max-width: 767px) {
+  .mobile-px { padding-left: 1rem; padding-right: 1rem; }
+  .hero-gradient .grid { gap: 1.5rem; }
+}
+
+/* Horizontal scroll pills on mobile */
+.pills-scroll {
+  display: flex;
+  gap: 0.625rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 0.25rem;
+}
+.pills-scroll::-webkit-scrollbar { display: none; }
+.pills-scroll > * { flex-shrink: 0; }

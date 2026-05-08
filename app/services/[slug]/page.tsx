@@ -79,14 +79,14 @@ export default async function ServiceDetailPage({ params }: Props) {
       </div>
 
       {/* Hero */}
-      <section className="hero-gradient text-white py-12 px-4">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+      <section className="hero-gradient text-white py-10 md:py-12 px-4">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <div className="text-5xl mb-4">{service.icon}</div>
             <h1 className="text-3xl md:text-4xl font-black mb-3">{service.name}</h1>
             <p className="text-blue-100 text-base mb-5 leading-relaxed">{service.description}</p>
 
-            <div className="grid grid-cols-2 gap-3 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5">
               {service.benefits.slice(0, 4).map((b) => (
                 <div key={b} className="flex items-center gap-2 text-sm">
                   <CheckCircle size={15} className="text-green-400 flex-shrink-0" />
@@ -171,7 +171,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <section>
             <h2 className="text-xl font-black mb-2" style={{ color: "var(--primary)" }}>Transparent Pricing</h2>
             <div className="section-divider-left"></div>
-            <div className="mt-4 overflow-hidden rounded-xl border border-gray-200">
+            <div className="mt-4 table-scroll rounded-xl border border-gray-200">
               <table className="pricing-table">
                 <thead>
                   <tr>

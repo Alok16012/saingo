@@ -28,14 +28,14 @@ export default function HomePage() {
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")`,
           }}
         />
-        <div className="max-w-7xl mx-auto px-4 py-14 md:py-20 grid lg:grid-cols-2 gap-10 items-center relative">
+        <div className="max-w-7xl mx-auto px-4 py-10 md:py-20 grid lg:grid-cols-2 gap-8 items-center relative">
           <div>
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm font-medium mb-5">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
               Trusted by 5,000+ NGOs &amp; Businesses across India
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-5">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-black leading-tight mb-4 md:mb-5">
               <span className="text-amber-400">dlegal</span>tech<br />
               <span className="text-blue-200 text-2xl md:text-3xl font-semibold">India&apos;s Most Trusted</span><br />
               Legal Platform
@@ -86,7 +86,7 @@ export default function HomePage() {
           </div>
 
           {/* Lead Form */}
-          <div className="bg-white rounded-2xl p-6 shadow-2xl">
+          <div className="bg-white rounded-2xl p-5 md:p-6 shadow-2xl">
             <div className="flex items-center gap-2 mb-1">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse inline-block"></span>
               <p className="text-xs font-semibold text-green-700">Experts Online — Avg response 15 min</p>
@@ -125,12 +125,12 @@ export default function HomePage() {
           </div>
 
           {/* Category Pills */}
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
+          <div className="pills-scroll md:flex md:flex-wrap md:justify-center md:gap-3 mb-10 px-0">
             {MEGA_NAV.map((cat) => (
               <Link
                 key={cat.label}
                 href={cat.href}
-                className="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-gray-200 bg-white hover:border-blue-400 hover:text-blue-800 text-sm font-semibold text-gray-700 transition-all hover:shadow-md"
+                className="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-gray-200 bg-white hover:border-blue-400 hover:text-blue-800 text-sm font-semibold text-gray-700 transition-all hover:shadow-md whitespace-nowrap"
               >
                 <span>{cat.icon}</span>
                 {cat.label}

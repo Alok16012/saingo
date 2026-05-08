@@ -68,8 +68,8 @@ export default async function LocationPage({ params }: Props) {
       </div>
 
       {/* Hero */}
-      <section className="hero-gradient text-white py-12 px-4">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+      <section className="hero-gradient text-white py-10 md:py-12 px-4">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <MapPin size={20} className="text-amber-400" />
@@ -81,9 +81,9 @@ export default async function LocationPage({ params }: Props) {
             <p className="text-blue-100 text-base mb-5 leading-relaxed">
               Expert legal consultancy services in {loc.city}. Our advocates understand {loc.state}&apos;s specific regulations for NGO and business registration.
             </p>
-            <div className="grid grid-cols-2 gap-3 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5">
               {[
-                `Local {loc.state} expertise`,
+                `Local ${loc.state} expertise`,
                 "7-10 day delivery",
                 "100% online process",
                 "Free consultation",

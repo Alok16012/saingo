@@ -73,7 +73,7 @@ export default function DashboardPage() {
   const completedOrders = MOCK_ORDERS.filter((o) => o.status === "completed");
 
   return (
-    <main className="pb-20 md:pb-8 bg-gray-50 min-h-screen">
+    <main className="pb-16 md:pb-8 bg-gray-50 min-h-screen">
       {/* Dashboard Header */}
       <div className="hero-gradient text-white py-6 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">

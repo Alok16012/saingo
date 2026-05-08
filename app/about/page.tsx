@@ -49,7 +49,7 @@ export default function AboutPage() {
       <div className="max-w-7xl mx-auto px-4 py-12 space-y-16">
 
         {/* Founder Story */}
-        <section className="grid lg:grid-cols-2 gap-12 items-center">
+        <section className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
             <span className="badge badge-accent mb-3">Our Story</span>
             <h2 className="section-heading mb-2">Founded on a Mission to Make Legal Services Accessible</h2>
@@ -164,7 +164,7 @@ export default function AboutPage() {
         </section>
 
         {/* Contact Form */}
-        <section className="grid lg:grid-cols-2 gap-10 items-start">
+        <section className="grid lg:grid-cols-2 gap-8 md:gap-10 items-start">
           <div>
             <span className="badge badge-accent mb-3">Get in Touch</span>
             <h2 className="section-heading mb-2">Talk to Our Experts</h2>
