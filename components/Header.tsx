@@ -94,16 +94,15 @@ export default function Header() {
                 onMouseLeave={closeMenu}
               >
                 <button
-                  className={`flex items-center gap-1 px-3 h-full text-sm font-semibold transition-colors border-b-2 ${
+                  className={`flex items-center gap-0.5 px-2.5 h-full text-[13px] font-semibold whitespace-nowrap transition-colors border-b-2 ${
                     activeMenu === item.label
                       ? "text-blue-900 border-amber-500"
                       : "text-gray-700 border-transparent hover:text-blue-900 hover:border-amber-300"
                   }`}
                 >
-                  <span className="text-base mr-0.5">{item.icon}</span>
-                  {item.label}
+                  {item.navLabel}
                   <ChevronDown
-                    size={13}
+                    size={12}
                     className={`transition-transform duration-200 ${activeMenu === item.label ? "rotate-180" : ""}`}
                   />
                 </button>
@@ -196,7 +195,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 h-full flex items-center text-sm font-semibold text-gray-700 hover:text-blue-900 border-b-2 border-transparent hover:border-amber-300 transition-colors"
+                className="px-2.5 h-full flex items-center text-[13px] font-semibold whitespace-nowrap text-gray-700 hover:text-blue-900 border-b-2 border-transparent hover:border-amber-300 transition-colors"
               >
                 {link.label}
               </Link>
@@ -204,19 +203,16 @@ export default function Header() {
           </nav>
 
           {/* Desktop Right */}
-          <div className="hidden lg:flex items-center gap-3">
-            <button className="p-2 text-gray-500 hover:text-blue-900 transition-colors" aria-label="Search">
-              <Search size={17} />
-            </button>
-            <a href={`tel:${BRAND.phone}`} className="text-sm font-semibold text-gray-600 hover:text-blue-900 flex items-center gap-1.5">
-              <Phone size={14} />
+          <div className="hidden lg:flex items-center gap-2 shrink-0">
+            <a href={`tel:${BRAND.phone}`} className="text-[13px] font-semibold text-gray-600 hover:text-blue-900 flex items-center gap-1.5 whitespace-nowrap xl:flex hidden">
+              <Phone size={13} />
               {BRAND.phone}
             </a>
             <a
               href={`https://wa.me/${BRAND.whatsapp}?text=Hi%20dlegaltech%2C%20I%20need%20free%20consultation`}
               target="_blank"
               rel="noreferrer"
-              className="btn-primary text-sm py-2 px-4"
+              className="btn-primary text-[13px] py-2 px-4 whitespace-nowrap"
             >
               Free Consultation
             </a>

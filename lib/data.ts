@@ -754,6 +754,7 @@ export const SERVICES = [
 export const MEGA_NAV = [
   {
     label: "NGO / Non-Profit",
+    navLabel: "NGO Services",
     icon: "🏛️",
     href: "/services#ngo",
     color: "from-blue-600 to-blue-800",
@@ -786,6 +787,7 @@ export const MEGA_NAV = [
   },
   {
     label: "Start a Business",
+    navLabel: "Business",
     icon: "🚀",
     href: "/services#business",
     color: "from-amber-500 to-orange-600",
@@ -818,6 +820,7 @@ export const MEGA_NAV = [
   },
   {
     label: "Tax & Compliance",
+    navLabel: "Tax & GST",
     icon: "📊",
     href: "/services#tax",
     color: "from-green-600 to-emerald-700",
@@ -850,6 +853,7 @@ export const MEGA_NAV = [
   },
   {
     label: "Trademark & IP",
+    navLabel: "Trademark",
     icon: "™️",
     href: "/services#ip",
     color: "from-purple-600 to-violet-700",
@@ -882,6 +886,7 @@ export const MEGA_NAV = [
   },
   {
     label: "Licenses & Permits",
+    navLabel: "Licenses",
     icon: "📜",
     href: "/services#licenses",
     color: "from-teal-500 to-cyan-700",
@@ -914,6 +919,7 @@ export const MEGA_NAV = [
   },
   {
     label: "Legal Services",
+    navLabel: "Legal",
     icon: "⚖️",
     href: "/services#legal",
     color: "from-rose-600 to-red-700",
