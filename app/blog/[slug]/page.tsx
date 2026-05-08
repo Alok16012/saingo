@@ -191,7 +191,7 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Inline CTA */}
           <div className="mt-8 p-5 rounded-2xl text-white" style={{ background: "var(--primary)" }}>
             <h3 className="font-bold text-lg mb-2">Need Expert Help with {post.tags[0]}?</h3>
-            <p className="text-blue-200 text-sm mb-4">Get free consultation from Advocate P.R. Pandey. We handle everything — from document preparation to final certificate.</p>
+            <p className="text-blue-200 text-sm mb-4">Get free expert consultation from the dlegaltech legal team. We handle everything — from document preparation to final certificate.</p>
             <a href={`https://wa.me/${BRAND.whatsapp}?text=Hi%20I%20read%20your%20article%20on%20${encodeURIComponent(post.title)}%20and%20need%20help`} target="_blank" rel="noreferrer" className="btn-primary">
               💬 Get Free Expert Help
             </a>

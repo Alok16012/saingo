@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog & Legal Resources — NGO Registration Guides",
-  description: "Expert guides on NGO registration, FCRA, 12A/80G, Section 8 Company, CSR Funding, and more. Written by Advocate P.R. Pandey.",
+  description: "Expert guides on NGO registration, FCRA, 12A/80G, Section 8 Company, CSR Funding, and more. Written by the dlegaltech legal team.",
 };
 
 const ALL_CATEGORIES = Array.from(new Set(BLOG_POSTS.map((p) => p.category)));
@@ -16,7 +16,7 @@ export default function BlogPage() {
       <div className="hero-gradient text-white py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-black mb-3">Legal Resources &amp; Guides</h1>
-          <p className="text-blue-100 text-base mb-5">Expert articles on NGO registration, compliance, and business law — written by Advocate P.R. Pandey and our legal team.</p>
+          <p className="text-blue-100 text-base mb-5">Expert articles on NGO registration, compliance, and business law — written by the dlegaltech legal team.</p>
           <div className="flex flex-wrap justify-center gap-2">
             <span className="badge" style={{ background: "rgba(255,255,255,0.15)", color: "white" }}>All Topics</span>
             {ALL_CATEGORIES.map((cat) => (

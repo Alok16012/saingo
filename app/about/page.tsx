@@ -5,8 +5,8 @@ import LeadForm from "@/components/LeadForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "About Us | Sai NGO & Business Consultancy®️" },
-  description: "Learn about dlegaltech and Sai NGO & Business Consultancy®️. Founded by Advocate P.R. Pandey with 15+ years of experience. 5000+ clients served across India.",
+  title: { absolute: "About Us | dlegaltech" },
+  description: "Learn about dlegaltech — India's most trusted digital legal consultancy platform. 15+ years experience, 5000+ clients, expert advocates registered with Bar Council of India.",
 };
 
 export default function AboutPage() {
@@ -15,9 +15,9 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="hero-gradient text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-black mb-4">About Sai NGO &amp; Business Consultancy®️</h1>
+          <h1 className="text-3xl md:text-4xl font-black mb-4">About dlegaltech</h1>
           <p className="text-blue-100 text-lg leading-relaxed max-w-2xl mx-auto">
-            India&apos;s most trusted legal consultancy for NGO registration and business incorporation, founded by <strong className="text-white">Advocate P.R. Pandey</strong> with 15+ years of dedicated service.
+            India&apos;s most trusted digital legal consultancy platform for NGO registration, business incorporation, and legal compliance — 15+ years of dedicated expert service.
           </p>
         </div>
       </section>
@@ -56,10 +56,10 @@ export default function AboutPage() {
             <div className="section-divider-left"></div>
             <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
               <p>
-                dlegaltech was born from a simple observation by <strong>Advocate P.R. Pandey</strong> — thousands of social entrepreneurs and NGO founders were struggling to navigate India&apos;s complex legal registration system, often paying exorbitant fees or dealing with fraudulent agents.
+                dlegaltech was founded on a simple mission — to make India&apos;s complex legal registration system accessible, transparent, and affordable for everyone, from NGO founders in small towns to entrepreneurs launching startups in metros.
               </p>
               <p>
-                In 2009, under the brand of <strong>Sai NGO &amp; Business Consultancy®️</strong>, Advocate Pandey started providing affordable, transparent, and expert legal services for NGO registration in Jharkhand. Word spread quickly as clients experienced the difference — clear pricing, no hidden charges, and genuine legal expertise.
+                Starting in 2009 with a focus on NGO registration services in Jharkhand, dlegaltech quickly expanded as clients experienced the difference — clear pricing, no hidden charges, and genuine legal expertise delivered by registered advocates.
               </p>
               <p>
                 Over 15 years, dlegaltech has evolved into India&apos;s leading digital legal consultancy, serving 5,000+ clients across all major Indian cities. Our government trademark registration and ISO certification reflect our commitment to quality and authenticity.
@@ -78,8 +78,8 @@ export default function AboutPage() {
                   AP
                 </div>
                 <div>
-                  <h3 className="text-xl font-black text-gray-900">Advocate P.R. Pandey</h3>
-                  <p className="text-sm text-gray-500 mb-2">Founder &amp; Legal Head</p>
+                  <h3 className="text-xl font-black text-gray-900">dlegaltech Legal Head</h3>
+                  <p className="text-sm text-gray-500 mb-2">Founder &amp; Senior Advocate</p>
                   <p className="text-xs font-medium text-blue-700 mb-3">Bar Council of India Registered</p>
                   <div className="space-y-1.5">
                     {["15+ Years Legal Practice", "5000+ Clients Served", "Expert in NGO & Corporate Law", "Pan India Practice"].map((d) => (
@@ -146,7 +146,7 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { name: "Advocate P.R. Pandey", role: "Founder & Legal Head", exp: "15+ years" },
+              { name: "Senior Advocate", role: "Founder & Legal Head", exp: "15+ years" },
               { name: "Adv. Meera Sharma", role: "NGO Compliance Expert", exp: "8 years" },
               { name: "CA Rajesh Gupta", role: "Tax & Finance Advisor", exp: "10 years" },
               { name: "Adv. Priya Singh", role: "Corporate Law Specialist", exp: "7 years" },

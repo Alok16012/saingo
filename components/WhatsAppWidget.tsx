@@ -24,7 +24,7 @@ export default function WhatsAppWidget() {
                 d
               </div>
               <div>
-                <p className="text-white font-semibold text-sm">Sai NGO Consultancy</p>
+                <p className="text-white font-semibold text-sm">dlegaltech</p>
                 <p className="text-green-100 text-xs flex items-center gap-1">
                   <span className="w-2 h-2 rounded-full bg-green-200 inline-block"></span>
                   Online — typically replies in 5 min
@@ -39,7 +39,7 @@ export default function WhatsAppWidget() {
           {/* Chat bubble */}
           <div className="p-4 bg-green-50">
             <div className="bg-white rounded-xl p-3 shadow-sm max-w-xs text-sm text-gray-700 leading-relaxed">
-              👋 Hi! Welcome to <strong>Sai NGO &amp; Business Consultancy®️</strong>.<br /><br />
+              👋 Hi! Welcome to <strong>dlegaltech</strong>.<br /><br />
               How can we help you today? Select a quick reply or start typing.
             </div>
           </div>

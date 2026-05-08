@@ -1,25 +1,31 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Star, BookOpen, TrendingUp, Shield, Clock, Award } from "lucide-react";
+import { ArrowRight, CheckCircle, Star, BookOpen, TrendingUp, Shield, Clock, Award, Phone } from "lucide-react";
 import ServiceCard from "@/components/ServiceCard";
 import LeadForm from "@/components/LeadForm";
-import { SERVICES, STATS, TESTIMONIALS, BLOG_POSTS, PROCESS_STEPS, LOCATIONS, BRAND } from "@/lib/data";
+import { SERVICES, STATS, TESTIMONIALS, BLOG_POSTS, PROCESS_STEPS, LOCATIONS, BRAND, MEGA_NAV } from "@/lib/data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Sai NGO & Business Consultancy®️ — India's Most Trusted Legal Platform" },
-  description: "Expert NGO registration, Trust, Society, Section 8, FCRA, 12A/80G, Company Registration in India. Free consultation by Advocate P.R. Pandey. 5000+ clients, 4.9★ rating.",
-  keywords: "NGO registration India, Sai NGO Consultancy, Trust registration, Section 8 company, FCRA registration, 12A 80G, company registration, trademark registration",
+  title: { absolute: "dlegaltech — India's Most Trusted Digital Legal Consultancy Platform" },
+  description: "Expert NGO registration, company incorporation, trademark, GST & legal compliance in India. 5000+ clients served. Free consultation. 4.9★ rated.",
+  keywords: "NGO registration India, dlegaltech, company registration, trademark registration, GST registration, legal services India",
 };
 
 export default function HomePage() {
+  const ngoServices = SERVICES.filter((s) => s.category === "ngo").slice(0, 4);
+  const bizServices = SERVICES.filter((s) => s.category === "business").slice(0, 4);
+  const taxServices = SERVICES.filter((s) => s.category === "tax").slice(0, 2);
+  const ipServices = SERVICES.filter((s) => s.category === "ip").slice(0, 2);
+
   return (
     <main className="pb-16 md:pb-0">
-      {/* HERO */}
+
+      {/* ── HERO ─────────────────────────────────────────────────── */}
       <section className="hero-gradient text-white relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-5"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")`,
           }}
         />
         <div className="max-w-7xl mx-auto px-4 py-14 md:py-20 grid lg:grid-cols-2 gap-10 items-center relative">
@@ -30,21 +36,21 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-5">
-              Sai NGO &amp; Business<br />
-              <span className="text-amber-400">Consultancy</span>®️
+              <span className="text-amber-400">dlegal</span>tech<br />
+              <span className="text-blue-200 text-2xl md:text-3xl font-semibold">India&apos;s Most Trusted</span><br />
+              Legal Platform
             </h1>
 
             <p className="text-blue-100 text-lg mb-6 leading-relaxed">
-              Expert NGO registration, business incorporation &amp; legal compliance services across India. Guided by{" "}
-              <strong className="text-white">Advocate P.R. Pandey</strong> — fast, transparent &amp; affordable.
+              Expert NGO registration, business incorporation, trademark protection &amp; legal compliance — all online, fast &amp; affordable.
             </p>
 
             <div className="grid grid-cols-2 gap-3 mb-8">
               {[
                 "NGO Registration from ₹4,999",
-                "7-10 day delivery",
+                "Company Registration from ₹5,999",
                 "Free Expert Consultation",
-                "100% Online Process",
+                "100% Online · Pan India",
               ].map((b) => (
                 <div key={b} className="flex items-center gap-2 text-sm">
                   <CheckCircle size={16} className="text-green-400 flex-shrink-0" />
@@ -55,15 +61,15 @@ export default function HomePage() {
 
             <div className="flex flex-wrap gap-3">
               <a
-                href={`https://wa.me/${BRAND.whatsapp}?text=Hi%20I%20need%20NGO%20registration%20consultation`}
+                href={`https://wa.me/${BRAND.whatsapp}?text=Hi%20dlegaltech%2C%20I%20need%20consultation`}
                 target="_blank"
                 rel="noreferrer"
                 className="btn-primary text-base px-6 py-3"
               >
-                💬 WhatsApp Consultation
+                💬 Free Consultation
               </a>
               <Link href="/services" className="btn-white text-base px-6 py-3">
-                Explore Services <ArrowRight size={16} />
+                All Services <ArrowRight size={16} />
               </Link>
             </div>
 
@@ -83,7 +89,7 @@ export default function HomePage() {
           <div className="bg-white rounded-2xl p-6 shadow-2xl">
             <div className="flex items-center gap-2 mb-1">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse inline-block"></span>
-              <p className="text-xs font-semibold text-green-700">Expert Online — Avg response 15 min</p>
+              <p className="text-xs font-semibold text-green-700">Experts Online — Avg response 15 min</p>
             </div>
             <h2 className="text-lg font-black text-gray-900 mb-4">Get Free Expert Consultation</h2>
             <LeadForm variant="compact" />
@@ -91,7 +97,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* STATS */}
+      {/* ── STATS ──────────────────────────────────────────────────── */}
       <section className="py-10 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -106,41 +112,129 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* ── SERVICE CATEGORIES ─────────────────────────────────────── */}
       <section className="py-14 bg-gray-50" id="services">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <span className="badge badge-accent mb-3">Our Services</span>
-            <h2 className="section-heading">Complete Legal Services for NGOs &amp; Businesses</h2>
+            <h2 className="text-3xl font-black text-gray-900 mb-2">Complete Legal Services for Every Need</h2>
             <div className="section-divider"></div>
-            <p className="section-subheading max-w-2xl mx-auto">
-              From NGO registration to trademark protection — all your legal needs under one roof, guided by experienced advocates.
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              From NGO registration to trademark protection — 26+ services covering all your legal requirements, guided by expert advocates.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {SERVICES.slice(0, 8).map((service) => (
-              <ServiceCard key={service.slug} service={service} />
+          {/* Category Pills */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            {MEGA_NAV.map((cat) => (
+              <Link
+                key={cat.label}
+                href={cat.href}
+                className="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-gray-200 bg-white hover:border-blue-400 hover:text-blue-800 text-sm font-semibold text-gray-700 transition-all hover:shadow-md"
+              >
+                <span>{cat.icon}</span>
+                {cat.label}
+              </Link>
             ))}
+          </div>
+
+          {/* NGO Services Row */}
+          <div className="mb-10">
+            <div className="flex items-center justify-between mb-5">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🏛️</span>
+                <div>
+                  <h3 className="text-xl font-black text-gray-900">NGO &amp; Non-Profit Services</h3>
+                  <p className="text-sm text-gray-500">Registration, tax exemptions &amp; funding support</p>
+                </div>
+              </div>
+              <Link href="/services#ngo" className="btn-outline text-sm py-2 px-4 hidden md:flex">
+                View All <ArrowRight size={14} />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {ngoServices.map((service) => (
+                <ServiceCard key={service.slug} service={service} />
+              ))}
+            </div>
+          </div>
+
+          {/* Business Registration Row */}
+          <div className="mb-10">
+            <div className="flex items-center justify-between mb-5">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🚀</span>
+                <div>
+                  <h3 className="text-xl font-black text-gray-900">Business &amp; Company Registration</h3>
+                  <p className="text-sm text-gray-500">Pvt Ltd, OPC, LLP, Partnership &amp; more</p>
+                </div>
+              </div>
+              <Link href="/services#business" className="btn-outline text-sm py-2 px-4 hidden md:flex">
+                View All <ArrowRight size={14} />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {bizServices.map((service) => (
+                <ServiceCard key={service.slug} service={service} />
+              ))}
+            </div>
+          </div>
+
+          {/* Tax + IP Row */}
+          <div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">📊</span>
+                    <h3 className="text-lg font-black text-gray-900">Tax &amp; Compliance</h3>
+                  </div>
+                  <Link href="/services#tax" className="text-xs font-semibold text-blue-800 hover:text-blue-900 flex items-center gap-1">
+                    More <ArrowRight size={11} />
+                  </Link>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {taxServices.map((service) => (
+                    <ServiceCard key={service.slug} service={service} compact />
+                  ))}
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">™️</span>
+                    <h3 className="text-lg font-black text-gray-900">Trademark &amp; IP</h3>
+                  </div>
+                  <Link href="/services#ip" className="text-xs font-semibold text-blue-800 hover:text-blue-900 flex items-center gap-1">
+                    More <ArrowRight size={11} />
+                  </Link>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {ipServices.map((service) => (
+                    <ServiceCard key={service.slug} service={service} compact />
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="text-center mt-8">
             <Link href="/services" className="btn-outline">
-              View All Services <ArrowRight size={16} />
+              View All 26+ Services <ArrowRight size={16} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* PROCESS */}
+      {/* ── PROCESS ────────────────────────────────────────────────── */}
       <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <span className="badge badge-primary mb-3">How It Works</span>
-            <h2 className="section-heading">Simple 4-Step Process</h2>
+            <h2 className="text-3xl font-black text-gray-900 mb-2">Simple 4-Step Process</h2>
             <div className="section-divider"></div>
-            <p className="section-subheading max-w-xl mx-auto">
-              Get your NGO or business registered in 4 easy steps — 100% online, fully guided.
+            <p className="text-gray-500 max-w-xl mx-auto">
+              Get your registration done in 4 easy steps — 100% online, fully guided, zero office visits.
             </p>
           </div>
 
@@ -170,7 +264,7 @@ export default function HomePage() {
 
           <div className="text-center mt-8">
             <a
-              href={`https://wa.me/${BRAND.whatsapp}?text=Hi%20I%20want%20to%20start%20my%20application`}
+              href={`https://wa.me/${BRAND.whatsapp}?text=Hi%20dlegaltech%2C%20I%20want%20to%20start%20my%20application`}
               target="_blank"
               rel="noreferrer"
               className="btn-primary text-base"
@@ -181,21 +275,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHY CHOOSE US */}
+      {/* ── WHY CHOOSE US ──────────────────────────────────────────── */}
       <section className="py-14 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="badge badge-accent mb-3">Why Choose Us</span>
-            <h2 className="section-heading mb-2">Expert Legal Services Backed by 15+ Years of Experience</h2>
+            <span className="badge badge-accent mb-3">Why dlegaltech</span>
+            <h2 className="text-3xl font-black text-gray-900 mb-2">Expert Legal Services Backed by 15+ Years</h2>
             <div className="section-divider-left"></div>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Founded by <strong>Advocate P.R. Pandey</strong>, dlegaltech has been India&apos;s go-to platform for NGO and business registration since 2009. We combine legal expertise with technology to deliver fast, transparent services.
+              dlegaltech combines legal expertise with technology to deliver fast, transparent, and affordable services across India. Our team of registered advocates ensures every application is 100% compliant.
             </p>
 
             <div className="space-y-4">
               {[
-                { icon: <Shield size={20} />, title: "Govt. Trademark Registered Brand", desc: "dlegaltech®️ is a government-registered trademark — symbol of trust and authenticity." },
-                { icon: <Award size={20} />, title: "Bar Council Registered Advocates", desc: "All legal work supervised by Advocate P.R. Pandey, registered with Bar Council of India." },
+                { icon: <Shield size={20} />, title: "Govt. Trademark Registered Brand", desc: "dlegaltech® is a government-registered trademark — symbol of trust and authenticity across India." },
+                { icon: <Award size={20} />, title: "Bar Council Registered Advocates", desc: "All legal work supervised by advocates registered with the Bar Council of India." },
                 { icon: <TrendingUp size={20} />, title: "98% Application Success Rate", desc: "Our thorough document review ensures maximum approval rate for all applications." },
                 { icon: <Clock size={20} />, title: "Real-Time Status Tracking", desc: "Track your application status anytime via our client dashboard — full transparency." },
               ].map((item) => (
@@ -234,14 +328,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
+      {/* ── TESTIMONIALS ───────────────────────────────────────────── */}
       <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <span className="badge badge-green mb-3">Client Reviews</span>
-            <h2 className="section-heading">What Our Clients Say</h2>
+            <h2 className="text-3xl font-black text-gray-900 mb-2">What Our Clients Say</h2>
             <div className="section-divider"></div>
-            <p className="section-subheading max-w-xl mx-auto">
+            <p className="text-gray-500 max-w-xl mx-auto">
               700+ verified Google reviews from NGO founders, startups, and legal professionals across India.
             </p>
           </div>
@@ -279,15 +373,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* LOCATIONS */}
+      {/* ── LOCATIONS ──────────────────────────────────────────────── */}
       <section className="py-14 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <span className="badge badge-primary mb-3">Pan India Service</span>
-            <h2 className="section-heading">We Serve Across India</h2>
+            <h2 className="text-3xl font-black text-gray-900 mb-2">We Serve Across India</h2>
             <div className="section-divider"></div>
-            <p className="section-subheading max-w-xl mx-auto">
-              Expert legal services in all major cities. Our consultants understand local regulations for seamless compliance.
+            <p className="text-gray-500 max-w-xl mx-auto">
+              Expert legal services in all major cities with deep knowledge of state-specific regulations.
             </p>
           </div>
 
@@ -296,7 +390,7 @@ export default function HomePage() {
               <Link
                 key={loc.slug}
                 href={`/locations/${loc.slug}`}
-                className="card p-4 text-center hover:border-blue-300 border-2 border-transparent group"
+                className="card p-4 text-center hover:border-blue-300 border-2 border-transparent group transition-all"
               >
                 <div className="text-2xl mb-2">📍</div>
                 <h3 className="font-bold text-sm text-gray-900 group-hover:text-blue-800">{loc.city}</h3>
@@ -304,18 +398,22 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
+
+          <p className="text-center mt-4 text-sm text-gray-500">
+            + All states and union territories via online services
+          </p>
         </div>
       </section>
 
-      {/* BLOG */}
+      {/* ── BLOG ───────────────────────────────────────────────────── */}
       <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <span className="badge badge-accent mb-3">Legal Resources</span>
-            <h2 className="section-heading">Guides &amp; Legal Updates</h2>
+            <h2 className="text-3xl font-black text-gray-900 mb-2">Guides &amp; Legal Updates</h2>
             <div className="section-divider"></div>
-            <p className="section-subheading max-w-xl mx-auto">
-              Expert articles on NGO registration, legal compliance, and business incorporation written by Advocate P.R. Pandey.
+            <p className="text-gray-500 max-w-xl mx-auto">
+              Expert articles on NGO registration, legal compliance, and business incorporation by our legal team.
             </p>
           </div>
 
@@ -351,16 +449,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CONSULTATION FORM */}
+      {/* ── CONSULTATION FORM ──────────────────────────────────────── */}
       <section className="py-14 bg-gray-50" id="consultation">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid lg:grid-cols-5 gap-10 items-start">
             <div className="lg:col-span-2">
               <span className="badge badge-accent mb-3">Free Consultation</span>
-              <h2 className="section-heading mb-2">Get Expert Guidance Today</h2>
+              <h2 className="text-3xl font-black text-gray-900 mb-2">Get Expert Guidance Today</h2>
               <div className="section-divider-left"></div>
               <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                Not sure which service you need? Our experts will guide you through the right registration process for your specific requirements.
+                Not sure which service you need? Our experts will guide you through the right registration process for your specific requirements — absolutely free.
               </p>
               <div className="space-y-3">
                 {[
@@ -378,9 +476,12 @@ export default function HomePage() {
               </div>
 
               <div className="mt-6 p-4 rounded-xl" style={{ background: "rgba(10,52,108,0.05)" }}>
-                <p className="text-sm font-semibold" style={{ color: "var(--primary)" }}>Founder &amp; Legal Head</p>
-                <p className="text-base font-bold text-gray-900 mt-1">Advocate P.R. Pandey</p>
-                <p className="text-xs text-gray-500 mt-1">Bar Council of India Registered | 15+ Years Experience | 5000+ Clients Served</p>
+                <p className="text-sm font-semibold" style={{ color: "var(--primary)" }}>Expert Support</p>
+                <p className="text-base font-bold text-gray-900 mt-1">dlegaltech Legal Team</p>
+                <p className="text-xs text-gray-500 mt-1">Bar Council Registered | 15+ Years Experience | 5000+ Clients Served</p>
+                <a href={`tel:${BRAND.phone}`} className="flex items-center gap-2 mt-3 text-sm font-semibold" style={{ color: "var(--primary)" }}>
+                  <Phone size={14} /> {BRAND.phone}
+                </a>
               </div>
             </div>
 
@@ -391,12 +492,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* ── FAQ ────────────────────────────────────────────────────── */}
       <section className="py-14 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-10">
             <span className="badge badge-primary mb-3">FAQs</span>
-            <h2 className="section-heading">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-black text-gray-900 mb-2">Frequently Asked Questions</h2>
             <div className="section-divider"></div>
           </div>
           <div className="space-y-3">
@@ -414,7 +515,7 @@ export default function HomePage() {
                 a: "Basic documents: Aadhar card and PAN of all members/trustees, address proof, passport photos, registered office address proof, and email/phone of key persons. Specific requirements vary by NGO type.",
               },
               {
-                q: "How much does NGO registration cost?",
+                q: "How much does NGO registration cost at dlegaltech?",
                 a: "NGO registration starts at ₹4,999 for Trust/Society. Section 8 Company starts at ₹6,999. All prices include government fees, professional charges, and certificate delivery. No hidden charges.",
               },
               {
@@ -422,8 +523,8 @@ export default function HomePage() {
                 a: "FCRA applications are processed by MHA and typically take 3–6 months. The organization must be registered for minimum 3 years and have spent ₹15+ lakhs on activities.",
               },
               {
-                q: "Can I get 12A and 80G registration for my existing NGO?",
-                a: "Yes! Any existing NGO can apply for 12A and 80G registration. The NGO must be actively working toward charitable objectives and have audited financial statements.",
+                q: "How long does trademark registration take?",
+                a: "After filing, you can use the ™ symbol immediately. Full ® registration takes 12-24 months subject to objections and oppositions. We keep you updated throughout the process.",
               },
             ].map((faq) => (
               <details key={faq.q} className="group border border-gray-200 rounded-xl overflow-hidden">

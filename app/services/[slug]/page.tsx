@@ -40,9 +40,8 @@ export default async function ServiceDetailPage({ params }: Props) {
     description: service.description,
     provider: {
       "@type": "Organization",
-      name: "dlegaltech — Sai NGO & Business Consultancy®️",
+      name: "dlegaltech",
       url: "https://www.dlegaltech.com",
-      founder: "Advocate P.R. Pandey",
     },
     offers: {
       "@type": "Offer",

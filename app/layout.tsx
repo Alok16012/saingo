@@ -10,21 +10,33 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: {
-    default: "Sai NGO & Business Consultancy®️ — India's Most Trusted Legal Platform",
-    template: "%s | Sai NGO & Business Consultancy®️",
+    default: "dlegaltech — India's Most Trusted Digital Legal Consultancy Platform",
+    template: "%s | dlegaltech",
   },
-  description: "Expert NGO registration, Trust, Society, Section 8, FCRA, 12A/80G, Company & Trademark Registration. Free consultation by Advocate P.R. Pandey. 5000+ clients, 4.9★ rating.",
-  keywords: ["NGO registration", "Sai NGO Consultancy", "Trust registration India", "Section 8 company", "FCRA registration", "12A 80G registration", "company registration India", "trademark registration"],
-  authors: [{ name: "Advocate P.R. Pandey", url: "https://www.dlegaltech.com" }],
-  creator: "Sai NGO & Business Consultancy®️",
+  description: "Expert NGO registration, Trust, Society, Section 8, FCRA, 12A/80G, Company & Trademark Registration online in India. Free consultation. 5000+ clients, 4.9★ rating.",
+  keywords: [
+    "NGO registration India",
+    "dlegaltech",
+    "Trust registration",
+    "Section 8 company",
+    "FCRA registration",
+    "12A 80G registration",
+    "company registration India",
+    "trademark registration",
+    "GST registration",
+    "legal services India",
+  ],
+  authors: [{ name: "dlegaltech Legal Team", url: "https://www.dlegaltech.com" }],
+  creator: "dlegaltech",
   metadataBase: new URL("https://www.dlegaltech.com"),
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://www.dlegaltech.com",
-    siteName: "Sai NGO & Business Consultancy®️",
-    title: "Sai NGO & Business Consultancy®️ — India's Most Trusted Legal Consultancy",
-    description: "Expert NGO & Business registration. 5000+ clients. Free consultation.",
+    siteName: "dlegaltech",
+    title: "dlegaltech — India's Most Trusted Digital Legal Consultancy Platform",
+    description: "Expert NGO & Business registration services. 5000+ clients. Free consultation.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "dlegaltech" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -50,18 +62,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "dlegaltech — Sai NGO & Business Consultancy®️",
+              "@type": "ProfessionalService",
+              name: "dlegaltech",
               url: "https://www.dlegaltech.com",
               logo: "https://www.dlegaltech.com/logo.png",
-              founder: { "@type": "Person", name: "Advocate P.R. Pandey" },
+              description: "India's most trusted digital legal consultancy platform for NGO registration, business incorporation, and legal compliance.",
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+91-8603456708",
                 contactType: "customer service",
+                areaServed: "IN",
                 availableLanguage: ["English", "Hindi"],
               },
-              sameAs: ["https://www.ngotrust.in"],
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Ranchi",
@@ -69,6 +81,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 postalCode: "834001",
                 addressCountry: "IN",
               },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.9",
+                reviewCount: "700",
+                bestRating: "5",
+              },
+              sameAs: ["https://www.ngotrust.in"],
             }),
           }}
         />

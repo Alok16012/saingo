@@ -12,7 +12,7 @@ const MOCK_ORDERS = [
     stages: ["Applied", "Docs Verified", "Filing", "Approved"],
     date: "2024-12-10",
     amount: 4999,
-    consultant: "Advocate P.R. Pandey",
+    consultant: "dlegaltech Expert",
   },
   {
     id: "ORD-2024-002",

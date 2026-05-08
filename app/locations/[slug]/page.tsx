@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!loc) return {};
   return {
     title: `NGO Registration in ${loc.city}, ${loc.state} | dlegaltech`,
-    description: `Expert NGO registration, FCRA, 12A/80G, Section 8 Company registration in ${loc.city}, ${loc.state}. Free consultation by Advocate P.R. Pandey. Call ${loc.phone}.`,
+    description: `Expert NGO registration, FCRA, 12A/80G, Section 8 Company registration in ${loc.city}, ${loc.state}. Free consultation by dlegaltech experts. Call ${loc.phone}.`,
     alternates: { canonical: `https://www.dlegaltech.com/locations/${slug}` },
   };
 }
